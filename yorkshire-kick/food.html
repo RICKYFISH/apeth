@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food | Daft-a-Peth</title>
+  <meta name="description" content="Recipes, matchday scran and places eaten out from Daft-a-Peth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo-daft-a-peth.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="food">
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Daft-a-Peth home">
+        <img src="assets/logo-daft-a-peth.png" alt="Daft-a-Peth logo" class="brand-logo" />
+        <span class="brand-text">
+          <strong>Daft-a-Peth</strong>
+          <small>daft-a-peth.com</small>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav>
+        <a href="blog.html?category=Football">Football</a>
+        <a href="blog.html?category=Betting">Betting</a>
+        <a href="blog.html?category=Golf">Golf</a>
+        <a href="blog.html?category=Lifestyle">Lifestyle</a>
+        <a href="food.html">Food</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-main wrap">
+    <div class="page-head page-head-dark">
+      <p class="eyebrow">Food</p>
+      <h1>Recipes, scran, and places you've eaten out.</h1>
+      <p class="lead slim">This page is made for both recipes and eating-out reviews. Keep it honest, simple, and in your voice.</p>
+      <div class="category-pills">
+        <a href="food.html" class="active">All food</a>
+        <a href="blog.html?category=Food&tag=Recipe">Recipes</a>
+        <a href="blog.html?category=Food&tag=Eating Out">Places eaten out</a>
+      </div>
+    </div>
+    <div id="food-posts" class="card-grid"></div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Daft-a-Peth</strong>
+        <p>Football, betting, golf, lifestyle, food, and gear with Yorkshire bite.</p>
+      </div>
+      <div>
+        <a href="blog.html?category=Football">Football</a>
+        <a href="blog.html?category=Betting">Betting</a>
+        <a href="blog.html?category=Golf">Golf</a>
+        <a href="blog.html?category=Lifestyle">Lifestyle</a>
+        <a href="food.html">Food</a>
+        <a href="shop.html">Shop</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

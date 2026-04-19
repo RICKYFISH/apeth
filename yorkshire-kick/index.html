@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daft-a-Peth | Football, Betting, Golf, Lifestyle, Food</title>
+  <meta name="description" content="Daft-a-Peth is a Yorkshire football lifestyle site mixing football, betting, golf, food, life stories, and bold merch drops." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo-daft-a-peth.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Daft-a-Peth home">
+        <img src="assets/logo-daft-a-peth.png" alt="Daft-a-Peth logo" class="brand-logo" />
+        <span class="brand-text">
+          <strong>Daft-a-Peth</strong>
+          <small>daft-a-peth.com</small>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav>
+        <a href="blog.html?category=Football">Football</a>
+        <a href="blog.html?category=Betting">Betting</a>
+        <a href="blog.html?category=Golf">Golf</a>
+        <a href="blog.html?category=Lifestyle">Lifestyle</a>
+        <a href="food.html">Food</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Daft-a-Peth.com</p>
+          <h1>Football, bets, golf, food, life, and gear done our way.</h1>
+          <p class="lead">Built for matchday heads, punters, grafters, scran lovers, and anyone who wants a site with a proper Yorkshire voice behind it.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#latest-articles">Latest articles</a>
+            <a class="btn btn-secondary" href="shop.html">See the shop</a>
+          </div>
+        </div>
+        <div class="hero-panel graffiti-panel">
+          <img src="assets/logo-daft-a-peth.png" alt="Daft-a-Peth graffiti logo" />
+          <div class="spray-bar"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="wrap home-intro">
+        <div class="about-panel">
+          <p class="eyebrow">About</p>
+          <h2>Not a generic blog. A proper Yorkshire lifestyle site with football at the heart of it.</h2>
+          <p>Daft-a-Peth is where football opinion, betting thoughts, golf bits, food posts, life stories, and your gear all live under one roof. It should feel like you, not like a template.</p>
+          <p><a class="text-link" href="about.html">Read the full story</a></p>
+        </div>
+        <div class="category-strip">
+          <p class="eyebrow">Top categories</p>
+          <h3>What sits at the top now</h3>
+          <div class="category-pills">
+            <a href="blog.html?category=Football">Football</a>
+            <a href="blog.html?category=Betting">Betting</a>
+            <a href="blog.html?category=Golf">Golf</a>
+            <a href="blog.html?category=Lifestyle">Lifestyle</a>
+            <a href="food.html">Food</a>
+            <a href="shop.html">Shop</a>
+          </div>
+          <p>The homepage now shows your latest articles underneath this section, whatever category they come from.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="latest-articles" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Latest articles</h2>
+          <a href="blog.html">View all</a>
+        </div>
+        <div id="latest-posts" class="card-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap split-banner">
+        <div>
+          <p class="eyebrow">Built to grow</p>
+          <h2>Use the category pages to keep things tidy as the site fills out.</h2>
+        </div>
+        <p>Football, betting, golf, lifestyle, and food can all flow into one latest feed on the home page while still having their own page when someone wants that one topic.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Featured drop</h2>
+          <a href="shop.html">Open shop</a>
+        </div>
+        <div id="featured-products" class="product-grid"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Daft-a-Peth</strong>
+        <p>Football, betting, golf, lifestyle, food, and gear with Yorkshire bite.</p>
+      </div>
+      <div>
+        <a href="blog.html?category=Football">Football</a>
+        <a href="blog.html?category=Betting">Betting</a>
+        <a href="blog.html?category=Golf">Golf</a>
+        <a href="blog.html?category=Lifestyle">Lifestyle</a>
+        <a href="food.html">Food</a>
+        <a href="shop.html">Shop</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

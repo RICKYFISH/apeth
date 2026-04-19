@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Saturday State of Mind Tee",
+    "type": "Tee Shirt",
+    "price": "£28",
+    "description": "Bold football-lifestyle graphic tee made for matchday, pub talk, and everyday wear.",
+    "link": "#"
+  },
+  {
+    "name": "Yorkshire Blue Training Shorts",
+    "type": "Shorts",
+    "price": "£32",
+    "description": "Clean athletic shorts with a football-culture feel and room for your logo hit.",
+    "link": "#"
+  },
+  {
+    "name": "Value Hunter Tee",
+    "type": "Tee Shirt",
+    "price": "£30",
+    "description": "Statement design for readers who like nerve, numbers, and proper opinions.",
+    "link": "#"
+  }
+]
