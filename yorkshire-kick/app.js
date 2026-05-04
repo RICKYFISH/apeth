@@ -27,10 +27,18 @@ function escapeHtml(value = '') {
 }
 
 function cardTemplate(post) {
-  const chips = [post.category, post.tag].filter(Boolean).map((item) => `<span class="article-meta-chip">${escapeHtml(item)}</span>`).join(' ');
+  const chips = [post.category, post.tag]
+    .filter(Boolean)
+    .map((item) => `<span class="article-meta-chip">${escapeHtml(item)}</span>`)
+    .join(' ');
+
+  const image = post.image
+    ? `<img class="thumb-img" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}">`
+    : '';
+
   return `
     <article class="card">
-      <div class="thumb"></div>
+      <div class="thumb">${image}</div>
       <div class="card-body">
         <span class="card-tag">${escapeHtml(post.category)}</span>
         <h3>${escapeHtml(post.title)}</h3>
@@ -102,13 +110,16 @@ function renderSinglePost() {
   }
 
   document.title = `${post.title} | Daft-a-Peth`;
+
   const paragraphs = (post.body || []).map((line) => `<p>${escapeHtml(line)}</p>`).join('');
   const tagChip = post.tag ? `<span class="article-meta-chip">${escapeHtml(post.tag)}</span>` : '';
+  const image = post.image ? `<img class="article-image" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}">` : '';
 
   el.innerHTML = `
     <p class="article-meta">${escapeHtml(post.category)} · ${formatDate(post.date)} · ${escapeHtml(post.readTime)}</p>
     ${tagChip}
     <h1>${escapeHtml(post.title)}</h1>
+    ${image}
     <p class="lead slim">${escapeHtml(post.excerpt)}</p>
     ${paragraphs}
   `;
