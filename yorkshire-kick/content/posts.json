@@ -1,6 +1,7 @@
 [
   {
     "title": "Fish and Chips",
+    "slug": "fish-and-chips",
     "category": "Food",
     "tags": ["Eating Out"],
     "date": "2026-04-19",
@@ -9,6 +10,7 @@
   },
   {
     "title": "Playing Golf While Legs Are Fucked",
+    "slug": "playing-golf-while-legs-are-fucked",
     "category": "Golf",
     "tags": ["Golf", "Lifestyle"],
     "date": "2026-04-19",
@@ -17,6 +19,7 @@
   },
   {
     "title": "Betting Yarn",
+    "slug": "betting-yarn",
     "category": "Betting",
     "tags": ["Championship", "Trading", "Betting Story"],
     "date": "2026-04-19",
