@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post, posts } }));
+}
+const { post, posts } = Astro.props;
+const { Content } = await render(post);
+const date = post.data.published.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+const related = posts.filter((item) => item.id !== post.id && item.data.category === post.data.category).slice(0, 2);
+---
+<BaseLayout title={`${post.data.title} | Daft-a-Peth`} description={post.data.description} image={post.data.image}>
+  <article class="post">
+    <header class="post-header wrap"><a class="post-category" href={`/category/${post.data.category.toLowerCase()}/`}>{post.data.category}</a><h1>{post.data.title}</h1><p class="post-intro">{post.data.description}</p><div class="post-meta"><span>{date}</span><span>By Daft-a-Peth</span>{post.data.tags.map((tag) => <span>{tag}</span>)}</div></header>
+    <div class="post-image wrap-wide"><img src={post.data.image} alt={post.data.imageAlt} /></div>
+    <div class="post-body wrap-narrow"><Content /><div class="sign-off"><span>Daft-a-Peth</span><img src="/logo-daft-a-peth.png" alt="" /></div></div>
+  </article>
+  {related.length > 0 && <section class="section related"><div class="wrap"><div class="section-heading"><div><p class="kicker">Keep going</p><h2>More {post.data.category}</h2></div></div><div class="article-grid">{related.map((item) => <ArticleCard post={item} />)}</div></div></section>}
+</BaseLayout>
