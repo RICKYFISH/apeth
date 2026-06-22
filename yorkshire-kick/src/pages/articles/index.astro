@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+---
+<BaseLayout title="All Articles | Daft-a-Peth" description="Every Daft-a-Peth article: football, betting, golf, food and life.">
+  <header class="page-hero"><div class="wrap">
+    <p class="kicker">The full pile</p><h1>All the yarns.</h1>
+    <p>Football, betting, golf, food, life and any other subject foolish enough to wander into range.</p>
+    <nav class="filter-pills" aria-label="Filter articles by category"><a class="active" href="/articles/">Everything</a>{["Football", "Betting", "Golf", "Food", "Lifestyle"].map((category) => <a href={`/category/${category.toLowerCase()}/`}>{category}</a>)}</nav>
+  </div></header>
+  <section class="section"><div class="wrap article-grid">{posts.map((post) => <ArticleCard post={post} />)}</div></section>
+</BaseLayout>
