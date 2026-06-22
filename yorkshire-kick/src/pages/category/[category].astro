@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  const categories = [...new Set(posts.map((post) => post.data.category))];
+  return categories.map((category) => ({ params: { category: category.toLowerCase() }, props: { category, posts: posts.filter((post) => post.data.category === category) } }));
+}
+const { category, posts } = Astro.props;
+posts.sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+---
+<BaseLayout title={`${category} | Daft-a-Peth`} description={`${category} stories and opinions from Daft-a-Peth.`}>
+  <header class="page-hero category-page"><div class="wrap">
+    <p class="kicker">Filed under</p><h1>{category}.</h1>
+    <p>{posts.length} {posts.length === 1 ? "article" : "articles"}, with more joining the pile whenever inspiration—or irritation—strikes.</p>
+    <nav class="filter-pills" aria-label="Filter articles by category"><a href="/articles/">Everything</a>{["Football", "Betting", "Golf", "Food", "Lifestyle"].map((item) => <a class:list={{ active: item === category }} href={`/category/${item.toLowerCase()}/`}>{item}</a>)}</nav>
+  </div></header>
+  <section class="section"><div class="wrap article-grid">{posts.map((post) => <ArticleCard post={post} />)}</div></section>
+</BaseLayout>
