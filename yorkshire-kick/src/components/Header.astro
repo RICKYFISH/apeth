@@ -1,0 +1,37 @@
+---
+const path = Astro.url.pathname;
+const links = [
+  { label: "Articles", href: "/articles/" },
+  { label: "Football", href: "/category/football/" },
+  { label: "Betting", href: "/category/betting/" },
+  { label: "Golf", href: "/category/golf/" },
+  { label: "Lifestyle", href: "/category/lifestyle/" },
+  { label: "Food", href: "/category/food/" },
+  { label: "About", href: "/about/" },
+  { label: "Shop", href: "/shop/" },
+];
+---
+
+<header class="site-header">
+  <div class="wrap nav-shell">
+    <a class="brand" href="/" aria-label="Daft-a-Peth home">
+      <img src="/logo-daft-a-peth.png" alt="" width="68" height="68" />
+      <span><strong>Daft-a-Peth</strong><small>Yorkshire-made nonsense</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Open menu</span>
+    </button>
+    <nav id="site-nav" aria-label="Main navigation">
+      {links.map((link) => <a class:list={{ active: path === link.href }} href={link.href}>{link.label}</a>)}
+    </nav>
+  </div>
+</header>
+<script>
+  const button = document.querySelector<HTMLButtonElement>(".menu-button");
+  const nav = document.querySelector<HTMLElement>("#site-nav");
+  button?.addEventListener("click", () => {
+    const open = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!open));
+    nav?.classList.toggle("open", !open);
+  });
+</script>
