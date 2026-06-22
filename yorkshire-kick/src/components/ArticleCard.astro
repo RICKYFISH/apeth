@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props { post: CollectionEntry<"posts">; large?: boolean; }
+const { post, large = false } = Astro.props;
+const date = post.data.published.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+---
+<article class:list={["article-card", { large }]}>
+  <a class="card-image" href={`/posts/${post.id}/`}>
+    <img src={post.data.image} alt={post.data.imageAlt} loading={large ? "eager" : "lazy"} />
+    <span>{post.data.category}</span>
+  </a>
+  <div class="card-copy">
+    <p class="card-date">{date}</p>
+    <h3><a href={`/posts/${post.id}/`}>{post.data.title}</a></h3>
+    <p>{post.data.description}</p>
+    <div class="card-foot">
+      <a class="text-link" href={`/posts/${post.id}/`}>Read the yarn <span>→</span></a>
+      <div class="tags">{post.data.tags.slice(0, 2).map((tag) => <span>{tag}</span>)}</div>
+    </div>
+  </div>
+</article>
