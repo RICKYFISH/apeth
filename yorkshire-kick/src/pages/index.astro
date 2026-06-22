@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+const featured = posts.find((post) => post.data.featured) ?? posts[0];
+const latest = posts.filter((post) => post.id !== featured.id).slice(0, 4);
+---
+<BaseLayout title="Daft-a-Peth | Football, Betting, Golf, Food & Life" description="A Yorkshire blog about football, betting, golf, food, life and whatever else is going down.">
+  <section class="hero"><div class="paint paint-orange"></div><div class="paint paint-blue"></div><div class="wrap hero-grid">
+    <div class="hero-copy"><p class="kicker">Yorkshire • Since whenever this seemed like a good idea</p><h1>Sport, scran<br />& <em>other nonsense.</em></h1><p class="hero-lead">Football at the heart of it. Betting from behind the curtain. Golf with knackered legs. Food judged without mercy.</p><div class="hero-actions"><a class="button button-primary" href="/articles/">Read the latest</a><a class="button button-ghost" href="/about/">What’s all this?</a></div><div class="rough-note"><strong>Not a tipping site.</strong><span>No gurus. No “10x your mindset”. Just stories and opinions.</span></div></div>
+    <div class="hero-logo"><div class="tape tape-one"></div><img src="/logo-daft-a-peth.png" alt="Daft-a-Peth graffiti logo" /><div class="stamp">Est.<br />Yorkshire</div></div>
+  </div></section>
+  <section class="category-rail" aria-label="Article categories"><div class="ticker"><a href="/category/football/">Football</a><b>✦</b><a href="/category/betting/">Betting</a><b>✦</b><a href="/category/golf/">Golf</a><b>✦</b><a href="/category/food/">Food</a><b>✦</b><a href="/category/lifestyle/">Lifestyle</a></div></section>
+  <section class="section feature-section"><div class="wrap"><div class="section-heading"><div><p class="kicker">Pulled from the pile</p><h2>Featured yarn</h2></div><span class="scribble">Worth a read →</span></div><ArticleCard post={featured} large /></div></section>
+  <section class="section latest-section"><div class="wrap"><div class="section-heading"><div><p class="kicker">Fresh-ish</p><h2>Latest articles</h2></div><a class="text-link" href="/articles/">See everything <span>→</span></a></div><div class="article-grid">{latest.map((post) => <ArticleCard post={post} />)}</div></div></section>
+  <section class="manifesto"><div class="wrap manifesto-grid"><p class="manifesto-number">01</p><div><p class="kicker">Why it exists</p><h2>A home for everything that won’t shut up in my head.</h2></div><div class="manifesto-copy"><p>Daft-a-Peth is what my Gran called me as a toddler. My wife now calls me a functional adult toddler, so we’re still on brand.</p><a class="button button-light" href="/about/">Read the full story</a></div></div></section>
+</BaseLayout>
