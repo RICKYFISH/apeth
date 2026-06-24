@@ -8,8 +8,8 @@ tags:
   - Betting
   - Review
   - Football
-image: "/betting1.jpg"
-imageAlt: "Betting review and football markets"
+image: "/world-cup-betting-review.svg"
+imageAlt: "World Cup group stage betting account screenshot showing £623.54 profit"
 featured: false
 draft: false
 ---
