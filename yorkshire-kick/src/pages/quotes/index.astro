@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const quotes = (await getCollection("quotes", ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BaseLayout title="Punditry Watch | Daft-a-Peth" description="A running collection of baffling live sport commentary, brain-dead punditry and things that should probably have stayed inside someone’s head.">
+  <section class="page-hero quotes-hero">
+    <div class="wrap">
+      <p class="kicker">Punditry watch</p>
+      <h1>Did they really<br /><em>say that?</em></h1>
+      <p>A running notebook for baffling live sport commentary, brain-dead punditry and phrases that escaped into the wild before anyone could stop them.</p>
+    </div>
+  </section>
+  <section class="section quotes-list-section">
+    <div class="wrap">
+      <div class="quote-list">
+        {quotes.map((item) => <article class="quote-card quote-card-wide">
+          <div>
+            <p class="quote-mark">“{item.data.quote}”</p>
+            <div class="quote-meta"><strong>{item.data.person}</strong><span>{item.data.date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span></div>
+            {item.data.context && <p class="quote-context">{item.data.context}</p>}
+          </div>
+          <aside>
+            <span class="quote-sport">{item.data.sport}</span>
+            {item.data.source && <p>{item.data.source}</p>}
+          </aside>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
