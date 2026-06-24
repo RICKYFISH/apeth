@@ -8,8 +8,8 @@ tags:
   - Football
   - Big Leagues
   - Underdogs
-image: "/betting1.jpg"
-imageAlt: "Football crowd and matchday atmosphere"
+image: "/world-cup-curacao-fan.jpg"
+imageAlt: "Curacao football supporter painted blue and celebrating in the crowd"
 featured: true
 draft: false
 ---
