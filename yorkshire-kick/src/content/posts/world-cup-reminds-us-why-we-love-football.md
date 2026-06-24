@@ -1,5 +1,5 @@
 ---
-title: "The World Cup Has Accidentally Reminded Us Why We Love Football"
+title: "The World Cup Has Reminded Us Why We Love Football — And Why the Big Leagues Are Shite"
 description: "The World Cup has been wrapped in corporate nonsense, but the football itself has reminded us what the big leagues have lost: chaos, personality and fun."
 published: 2026-06-24
 category: "Football"
