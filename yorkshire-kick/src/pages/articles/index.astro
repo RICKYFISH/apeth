@@ -10,5 +10,5 @@ const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort((a,
     <p>Football, betting, golf, food, life and any other subject foolish enough to wander into range.</p>
     <nav class="filter-pills" aria-label="Filter articles by category"><a class="active" href="/articles/">Everything</a>{["Football", "Betting", "Golf", "Food", "Lifestyle"].map((category) => <a href={`/category/${category.toLowerCase()}/`}>{category}</a>)}</nav>
   </div></header>
-  <section class="section"><div class="wrap article-grid">{posts.map((post) => <ArticleCard post={post} />)}</div></section>
+  <section class="section"><div class="wrap article-grid">{posts.length === 0 ? <p>New articles are on the way. Pop back soon.</p> : posts.map((post) => <ArticleCard post={post} />)}</div></section>
 </BaseLayout>
