@@ -1,6 +1,8 @@
 # LOTSO V5: private website trial
 
-The selected dashboard is **V5 Match Centre**. This is preparation only: there is no live dashboard, scheduled upload, login system or payment integration in this change.
+**Superseded for the website integration:** the user identified the existing **LOTSO Companion V4** in a screenshot on 19 October 2026. Follow [LOTSO_DASHBOARD_PUBLISHING.md](LOTSO_DASHBOARD_PUBLISHING.md). Keep the V5 tool only as unused preparation; do not use it to replace the working V4 dashboard.
+
+This earlier V5 investigation is preparation only: there is no live dashboard, scheduled upload, login system or payment integration in this change.
 
 ## What was checked on 19 October 2026
 
